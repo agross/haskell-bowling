@@ -29,3 +29,8 @@ spec = do
       it "is 90" $ do
         let g = game $ take 20 $ cycle [9, 0]
         score g `shouldBe` 90
+
+    context "6/ 30 00 ..." $
+      it "is 16" $ do
+        let g = game $ take 20 $ [6, 4, 3, 0] ++ repeat 0
+        score g `shouldBe` 16
