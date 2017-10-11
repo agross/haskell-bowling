@@ -34,3 +34,13 @@ spec = do
       it "is 16" $ do
         let g = game $ take 20 $ [6, 4, 3, 0] ++ repeat 0
         score g `shouldBe` 16
+
+    context "5/ ... 5/5" $
+      it "is 150" $ do
+        let g = game $ replicate 21 5
+        score g `shouldBe` 150
+
+    context "5/ ... 5/3" $
+      it "is 148" $ do
+        let g = game $ replicate 20 5 ++ [3]
+        score g `shouldBe` 148
