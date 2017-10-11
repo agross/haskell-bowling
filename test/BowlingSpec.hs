@@ -57,7 +57,12 @@ spec = do
 
     context "perfect game" $
       it "is 300" $ do
-        let g = game $ take 12 $ repeat 10
+        let g = game $ replicate 12 10
         score g `shouldBe` 300
+
+    context "chaotic scoring" $
+      it "is 133" $ do
+        let g = game [1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6]
+        score g `shouldBe` 133
 
 
