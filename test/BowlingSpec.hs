@@ -44,3 +44,20 @@ spec = do
       it "is 148" $ do
         let g = game $ replicate 20 5 ++ [3]
         score g `shouldBe` 148
+
+    context "X 43 00 ..." $
+      it "is 24" $ do
+        let g = game $ take 20 $ [10, 4, 3] ++ repeat 0
+        score g `shouldBe` 24
+
+    context "X X 43 00 ..." $
+      it "is 48" $ do
+        let g = game $ take 20 $ [10, 10, 4, 3] ++ repeat 0
+        score g `shouldBe` 48
+
+    context "perfect game" $
+      it "is 300" $ do
+        let g = game $ take 12 $ repeat 10
+        score g `shouldBe` 300
+
+
