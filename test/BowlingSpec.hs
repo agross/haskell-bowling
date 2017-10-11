@@ -12,12 +12,12 @@ main = hspec spec
 
 spec :: Spec
 spec = do
-  describe "True" $ do
-    it "is true" $ do
+  describe "True" $
+    it "is true" $
       True `shouldBe` True
 
-  -- describe "Bowling" $ do
-  --   it "removes leading and trailing whitespace" $ do
-  --     strip "\t  foo bar\n" `shouldBe` "foo bar"
-  --   it "is idempotent" $ property $
-  --     \str -> strip str === strip (strip str)
+  describe "Bowling Score" $
+    context "20 misses" $
+      it "is 0" $ do
+        let tries = replicate 20 0
+        score tries `shouldBe` 0
