@@ -19,8 +19,13 @@ spec = do
     it "is true" $
       True `shouldBe` True
 
-  describe "Bowling Score" $
+  describe "Bowling Score" $ do
     context "20 misses" $
       it "is 0" $ do
         let g = game $replicate 20 0
         score g `shouldBe` 0
+
+    context "10 times 9-" $
+      it "is 90" $ do
+        let g = game $ take 20 $ cycle [9, 0]
+        score g `shouldBe` 90
