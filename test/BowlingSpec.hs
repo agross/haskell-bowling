@@ -10,6 +10,9 @@ import Bowling
 main :: IO ()
 main = hspec spec
 
+game :: [Int] -> Game
+game = id
+
 spec :: Spec
 spec = do
   describe "True" $
@@ -19,5 +22,5 @@ spec = do
   describe "Bowling Score" $
     context "20 misses" $
       it "is 0" $ do
-        let tries = replicate 20 0
-        score tries `shouldBe` 0
+        let g = game $replicate 20 0
+        score g `shouldBe` 0

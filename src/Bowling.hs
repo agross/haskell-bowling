@@ -3,6 +3,7 @@ module Bowling where
 type Try = Int
 type Tries = [Try]
 type Score = Int
+type Game = Tries
 
-score :: Tries -> Score
+score :: Game -> Score
 score _ = 0
