@@ -6,5 +6,4 @@ type Score = Int
 type Game = Tries
 
 score :: Game -> Score
-score g =
-  foldl (+) 0 g
+score = sum
